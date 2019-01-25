@@ -10,6 +10,6 @@ Project Description:
   
 API's:
   SkyScanner
-  Air Visual(screenshots/!
+  Air Visual
   
-![alt text]
+  ![alt text](screenshots/https://user-images.githubusercontent.com/37785557/51724135-8c37fd80-2021-11e9-844a-62601c38e7ce.png "wire frame")
