@@ -12,4 +12,4 @@ API's:
   SkyScanner
   Air Visual
   
-  ![alt text](screenshots/https://user-images.githubusercontent.com/37785557/51724135-8c37fd80-2021-11e9-844a-62601c38e7ce.png "wire frame")
+  ![alt text](https://user-images.githubusercontent.com/37785557/51724135-8c37fd80-2021-11e9-844a-62601c38e7ce.png "wire frame")
