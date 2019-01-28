@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 .destinationOption {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -27,96 +26,5 @@
 .weatherPage-search {
     margin-top: 26%;
     margin-left: 15%;
-=======
-/* Over all styles */
-body {
-    background-image: url("../images/Screen\ Shot\ 2019-01-26\ at\ 12.42.35\ PM.png");
-  
-}
-.imgOverlay {
-    background-color: rgba(130, 162, 231, 0.267);
-}
-
-
-/* Index */
-.destinationOption {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 300px 200px 100px; 
-   gap: 20px;
-   margin: 10px 40px 0;
 
 }
-.card {
-    margin: 10px;
-    border-radius: 10px;
-}
-.destination-card{
-    display: flex;
-    justify-content: center;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.page-content {
-    background-color: rgba(87, 128, 222, 0.459);
-    border-radius: 10px;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    
-}
-
-
-
-
-/* weather and air quality */
-.weather-title {
-    letter-spacing: 3px;
-    text-align: center;
-
-}
-
-.weather-grid-container {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 150px 300px 150px;
-    gap: 20px;
-   gap: 20px;
-   margin: 5% 10% 0;
-}
-
-.weather-search-bar-container {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin: auto 20% auto;
-    background-color: rgba(87, 128, 222, 0.459);
-    border-radius: 10px;
-    padding: 1px 1px 15px;
-
-
-}
-.weather-search-btn {
-    width: 100px;
-    margin: 5px 5px 0;
-    background-color: #ffffff;
-}
-.weather-search-bar-container h5 {
-    text-align: center;
-}
-.weather-result {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: rgba(87, 128, 222, 0.459);
-    border-radius: 10px;
-}
-
->>>>>>> branchPart2
-
-/* Flight */
