@@ -13,3 +13,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.weather-air {
+    background-image: url("../images/weather.png");
+    height: 110%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
