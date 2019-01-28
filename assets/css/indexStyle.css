@@ -6,3 +6,10 @@ body {
 .results {
     background-image: url("../images/resultsbackgroud.jpg")
 }
+
+.flight {
+    background-image: url("../images/flightpage.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
