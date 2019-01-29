@@ -37,26 +37,29 @@
           </li>
         </ul>
     </nav>
-    <form class="weatherPage-search">
-      <div class="row">
-        <div class="col-md-2">
-          <input type="text" class="form-control" id="city" placeholder="City: Dallas">
-        </div>
-        <div class="col-md-2">
-          <input type="text" class="form-control" id="state" placeholder="State: Texas">
-        </div>
-          <div class="col-md-3">
-            <input type="text" class="form-control" id="country" placeholder="Country: United States">
-          </div>
-          <div class="col-md-2">
-            <input type="text" class="form-control" id="zipCode" placeholder="Zip Code: 75214">
-          </div>
-          <div class="col-md-2.5">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+    <div class="weather-grid-container">
+      <h2 class="weather-title">WEATHER AND AIR QUALITY</h2>
+      <!-- search area -->
+
+          <form class="weatherPage-search">
+              <div class="row">
+                <div class="col-md-2">
+                  <input type="text" class="form-control weather-input" id="city" placeholder="City: Dallas">
+                </div>
+                <div class="col-md-2">
+                  <input type="text" class="form-control weather-input" id="state" placeholder="State: Texas">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control weather-input" id="country" placeholder="Country: United States">
+                </div>
+                <div class="col-md-2.5">
+                  <button type="submit" id="search-weather" class="btn btn-primary weather-search-btn">Submit</button>
+                </div>
+              </div>
+            </form>  
         
-        </div>
-    </form>
+      <!-- search results card -->
+    </div>
     <script src="assets/js/main.js"></script>
 </body>
 
