@@ -10,11 +10,13 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/indexStyle.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>DEST-N-AIR | WEATHER</title>
+  <title>DEST-N-AIR | FLIGHTS</title>
 </head>
 
-<body class="weather-air">
+<body class="flight">
+
   <div class="imgOverlay">
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">DEST-N-AIR</a>
       <img class="resize" src="http://s3images.coroflot.com/user_files/individual_files/496564_xuvft79q3potafomsmeqqgwrk.jpg"
@@ -23,93 +25,44 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="flight.html">FLIGHT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather.html">WEATHER & AIR QUALITY</a>
+          </li>
+        </ul>
+    </nav>
+    <form class="flightPage-search">
+      <div class="row">
+        <div class="col-md-2">
+          <input type="text" class="form-control" id="from" placeholder="From: Dallas, Texas">
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="destination" placeholder="Where? Miami, Florida">
+        </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="when" placeholder="When? 10/12 - 10/15">
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="classType" placeholder="Class: Economy">
+          </div>
+          <div class="col-md-2.5">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        
+        </div>
+    </form>
 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Weather & Air Quality
-        </button>
-        <form class="dropdown-menu p-4">
-          <div class="form-group">
-            <label for="exampleDropdownFormEmail2">City</label>
-            <input type="text" class="form-control" id="cityAir" placeholder="Dallas">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">State</label>
-            <input type="text" class="form-control" id="stateAir" placeholder="Texas">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Country</label>
-            <input type="text" class="form-control" id="countryAir" placeholder="US">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Zip Code</label>
-            <input type="text" class="form-control" id="zipAir" placeholder="75214">
-          </div>
-          <button type="submit" class="btn btn-primary" id="weatherSearch">Search</button>
-        </form>
-      </div>
 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Flight Search
-        </button>
-        <form class="dropdown-menu p-4">
-          <div class="form-group">
-            <label for="exampleDropdownFormEmail2">From</label>
-            <input type="text" class="form-control" id="flightFrom" placeholder="Dallas, TX">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">To</label>
-            <input type="text" class="form-control" id="flightTo" placeholder="Miami, FL">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">When</label>
-            <input type="text" class="form-control" id="flightWhen" placeholder="10/13-10/17">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Class</label>
-            <input type="text" class="form-control" id="flightClass" placeholder="Economy">
-          </div>
-          <button type="submit" class="btn btn-primary" id="flightSearch">Search</button>
-        </form>
-      </div>
 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Trip Planner
-        </button>
-        <form class="dropdown-menu p-4">
-          <div class="form-group">
-            <label for="exampleDropdownFormEmail2">From</label>
-            <input type="text" class="form-control" id="tripFrom" placeholder="Dallas, TX">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">To</label>
-            <input type="text" class="form-control" id="tripTo" placeholder="Miami, FL">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">When</label>
-            <input type="text" class="form-control" id="tripWhen" placeholder="10/13-10/17">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Class</label>
-            <input type="text" class="form-control" id="tripClass" placeholder="Economy">
-          </div>
-          <button type="submit" class="btn btn-primary" id="tripPlanner">Search</button>
-        </form>
-      </div>
-      
 
-      <script src="assets/js/main.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
