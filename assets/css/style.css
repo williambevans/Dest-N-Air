@@ -1,4 +1,5 @@
 
+/* index */
 .destinationOption {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -7,6 +8,7 @@
 
 }
 
+/* .flight */
 .flight-search {
 
     padding: 14px;
@@ -23,8 +25,40 @@
 
 }
 
-.weatherPage-search {
-    margin-top: 26%;
-    margin-left: 15%;
-
+/* weather */
+.weather-grid-container {
+    display: grid;
+    grid-template-columns: 20% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    gap: 10px;
 }
+.weatherPage-search {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.weather-search-result {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.weather-search-btn {
+    width: 200px;
+    background-color: rgba(253, 253, 253, 0.473);
+    border: none;
+    color: #ffffff;
+}
+.weather-title {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    color: #ffffff;
+    background-color: rgba(226, 229, 241, 0.336);
+    text-align: center;
+    padding-top: 10px;
+}
+
+
