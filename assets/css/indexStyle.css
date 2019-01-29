@@ -2,21 +2,3 @@ body {
     background-image: url("../images/Screen\ Shot\ 2019-01-26\ at\ 12.42.35\ PM.png");
     background-color: rgba(130, 162, 231, 0.267);
 }
-
-.results {
-    background-image: url("../images/resultsbackgroud.jpg")
-}
-
-.flight {
-    background-image: url("../images/flightpage.jpg");
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.weather-air {
-    background-image: url("../images/weather.png");
-    height: 110%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
