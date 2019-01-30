@@ -9,7 +9,7 @@ $(document).ready(function () {
         console.log(stateElement);
         console.log(countryElement);
 
-        var queryURL = "http://api.airvisual.com/v2/city?city=Los%20Angeles&state=California&country=USA&key=BtNrfeJaZn6KRohbs";
+        var queryURL = "http://api.airvisual.com/v2/city?city="+cityElement+"&state="+stateElement+"&country="+countryElement+"&key=BtNrfeJaZn6KRohbs";
         
 
         $.ajax({
