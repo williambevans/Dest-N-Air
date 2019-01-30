@@ -9,22 +9,51 @@ $(document).ready(function () {
         console.log(stateElement);
         console.log(countryElement);
 
-        var queryURL = "http://api.airvisual.com/v2/city?city="+cityElement+"&state="+stateElement+"&country="+countryElement+"&key=BtNrfeJaZn6KRohbs";
-        
+        var queryURL = "http://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
+
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            var results = response.data;
+
+            var city = results.city;
+            var state = results.state;
+            var country = results.country;
+            var coordinatesLong = results.location.coordinates[0];
+            var coordinatesLat = results.location.coordinates[1];
+            var humidity = results.current.weather.hu;
+            var pressure = results.current.weather.pr;
+            var temperature = (results.current.weather.tp * 9/5) + 32;
+            var windDirection = results.current.weather.wd;
+            var windSpeed = results.current.weather.ws;
+
+
+
+            console.log("City: " + city);
+            console.log("State: " + state);
+            console.log("Country: " + country);
+            console.log("Longitude: " + coordinatesLong);
+            console.log("Latitude: " + coordinatesLat);
+            console.log("Humidity: " + humidity);
+            console.log("Temperature: " + temperature);
+            console.log("Wind Direction: " + windDirection);
+            console.log("Wind Speed: " + windSpeed);
+
             console.log(response);
+            console.log(results);
+            var weatherDiv = $("<div class='column'>");
+            var p = $("<p>").text("Rating : " + results.city);
+
         });
     });
 });
 
+
 $(document).ready(function () {
     var queryURL = "https://api-dev.fareportallabs.com/air/api/search/searchflightavailability";
-    var requestObject =
-    {
+    var requestObject = {
         "ResponseVersion": "VERSION41",
         "FlightSearchRequest": {
             "Adults": "1",
@@ -34,8 +63,7 @@ $(document).ready(function () {
             "InfantOnSeat": "0",
             "Seniors": "0",
             "TypeOfTrip": "ROUNDTRIP",
-            "SegmentDetails": [
-                {
+            "SegmentDetails": [{
                     "DepartureDate": "2019-07-29",
                     "DepartureTime": "1100",
                     "Destination": "NYC",
@@ -50,7 +78,7 @@ $(document).ready(function () {
             ]
         }
     }
-     console.log(requestObject);
+    console.log(requestObject);
     $.ajax({
         url: queryURL,
         method: "POST",
