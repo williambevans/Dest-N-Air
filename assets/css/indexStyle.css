@@ -34,3 +34,10 @@ body {
     font-size: 25px;
 }
 
+.card {
+    width: 100px;
+    height: 118px;
+    overflow: scroll;
+    margin-top: 27px;
+}
+
