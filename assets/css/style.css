@@ -67,8 +67,8 @@
 
 
 #myDIV {
-    grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
 
@@ -126,6 +126,10 @@ img {
 }
 
 .cardFlights {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
     background: white;
     font-size: 20px;
     font-weight: 200;
@@ -135,6 +139,32 @@ img {
 
 #signIn {
     background: blue;
+}
+
+
+.btn {
+    margin-right: 15px;
+}
+
+.resize {
+    margin-right: 15px;
+}
+
+.navbar-brand {
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.card-top {
+    background-color: white;
+    width: 100px;
+    height: 180px;
+    overflow: scroll;
+    margin-top: 27px;
+    border-radius: 10px;
+}
+.dragDiv{
+    
 }
 
 
