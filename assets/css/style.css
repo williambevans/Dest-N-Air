@@ -63,20 +63,42 @@
 }
 
 
-.flights {
-    position: absolute;
-  left: 33%;
-  top: 24%;
-  border-radius: 5%;
-  display: none;
-}
-
-.air-info {
-    grid-column-start: 2;
+#myDIV {
+    grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 4;
-    border-radius: 10px;
+
+  left: 33%;
+  top: 24%;
+  border-radius: 5%;
 
 }
 
+.air-info {
+    height: 80%;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-radius: 10px;
+}
+.imageFace {
+    position: relative;
+    left: 50%;
+    top: -50%;
+}
+.air-card-header {
+    font-size: 1.5em;
+}
+.flight-inf {
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-radius: 10px;
+}    
+.cardWeather {
+    background-color: #ffffff;
+}

@@ -53,9 +53,10 @@ $(document).ready(function () {
                 var windDirection = results.current.weather.wd;
                 var windSpeed = results.current.weather.ws;
                 var usaqi = results.current.pollution.aqius;
+                var mainus = results.current.pollution.mainus;
 
               
-                renderAirQuality(city, state, usaqi);
+                renderAirQuality(city, state, usaqi, mainus);
     
 
                 console.log("City: " + city);
@@ -95,10 +96,14 @@ $(document).ready(function () {
         $("#flights").show("slow");
     });
 });
-    function renderAirQuality(city, state, usaqi) {
+    function renderAirQuality(city, state, usaqi, mainus) {
         $('.air-card-header').html(city + " " +state);
-        $('.air-card-text').html("US AQI "+usaqi);
+        $('.air-card-usaqi').html("US AQI");
+        $('.air-card-text').html(+usaqi);
+        $('.air-card-mainus').html(mainus);
+
     }
+    function renderTemp()
  
     
 });
