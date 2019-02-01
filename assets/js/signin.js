@@ -29,7 +29,6 @@ var uiConfig = {
             // occurs. Check below for more details on this.
             return handleUIError(error);
         },
-       
     },
     credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
     // Query parameter name for mode.
