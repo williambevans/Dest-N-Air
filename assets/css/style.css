@@ -28,9 +28,10 @@
 /* weather */
 .weather-grid-container {
     display: grid;
-    grid-template-columns: 20% 33% 33%;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 33% 33% 33%;
     gap: 10px;
+    margin-left: 30px;
 }
 .weatherPage-search {
     grid-column-start: 2;
