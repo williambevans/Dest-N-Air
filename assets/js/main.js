@@ -5,6 +5,9 @@ $(document).ready(function () {
         var cityElement = $('#cityAir').val();
         var stateElement = $('#stateAir').val();
         var countryElement = $('#countryAir').val();
+        console.log(cityElement);
+        console.log(stateElement);
+        console.log(countryElement);
 
         var queryURL = "http://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
 
@@ -25,9 +28,9 @@ $(document).ready(function () {
             var temperature = (results.current.weather.tp * 9 / 5) + 32;
             var windDirection = results.current.weather.wd;
             var windSpeed = results.current.weather.ws;
-=======
-        ajaxRequest(queryURL, cityError);
+
     });
+    ajaxRequest(queryURL, cityError);
 
     // ajax request takes differnt urls
     function ajaxRequest(url, cityError) {
@@ -52,7 +55,7 @@ $(document).ready(function () {
                 var usaqi = results.current.pollution.aqius;
 
               
-                renderAirQuality(city, state);
+                renderAirQuality(city, state, usaqi);
     
 
                 console.log("City: " + city);
@@ -88,29 +91,14 @@ $(document).ready(function () {
     }
 
 
-    console.log(requestObject);
-    $.ajax({
-        url: queryURL,
-        method: "POST",
-        headers: {
-
-            'Authorization': "Basic d2hiZXZhbnNqckBnbWFpbC5jb206NEJFMEI2QUY=",
-            'Content-Type': "application/json"
-        },
-        data: JSON.stringify(requestObject)
-    }).then(function (response) {
-
-        console.log(response);
-    });
-
     $("#tripPlanner").click(function () {
         $("#flights").show("slow");
     });
 });
-    // function renderAirQuality(city, state, usaqi) {
-    //     $('.city-air-name').html(city + " " +state);
-    //     // $('#usaqi').html("US AQI "+usaqi);
-    // }
+    function renderAirQuality(city, state, usaqi) {
+        $('.air-card-header').html(city + " " +state);
+        $('.air-card-text').html("US AQI "+usaqi);
+    }
  
     
 });
