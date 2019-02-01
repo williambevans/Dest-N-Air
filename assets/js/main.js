@@ -9,6 +9,23 @@ $(document).ready(function () {
         var queryURL = "http://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
 
 
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            var results = response.data;
+
+            var city = results.city;
+            var state = results.state;
+            var country = results.country;
+            var coordinatesLong = results.location.coordinates[0];
+            var coordinatesLat = results.location.coordinates[1];
+            var humidity = results.current.weather.hu;
+            var pressure = results.current.weather.pr;
+            var temperature = (results.current.weather.tp * 9 / 5) + 32;
+            var windDirection = results.current.weather.wd;
+            var windSpeed = results.current.weather.ws;
+=======
         ajaxRequest(queryURL, cityError);
     });
 
@@ -69,6 +86,27 @@ $(document).ready(function () {
             ajaxRequest(queryURL);
         }
     }
+
+
+    console.log(requestObject);
+    $.ajax({
+        url: queryURL,
+        method: "POST",
+        headers: {
+
+            'Authorization': "Basic d2hiZXZhbnNqckBnbWFpbC5jb206NEJFMEI2QUY=",
+            'Content-Type': "application/json"
+        },
+        data: JSON.stringify(requestObject)
+    }).then(function (response) {
+
+        console.log(response);
+    });
+
+    $("#tripPlanner").click(function () {
+        $("#flights").show("slow");
+    });
+});
     // function renderAirQuality(city, state, usaqi) {
     //     $('.city-air-name').html(city + " " +state);
     //     // $('#usaqi').html("US AQI "+usaqi);
@@ -76,3 +114,4 @@ $(document).ready(function () {
  
     
 });
+

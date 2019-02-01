@@ -63,3 +63,11 @@
 }
 
 
+.flights {
+    position: absolute;
+  left: 33%;
+  top: 24%;
+  border-radius: 5%;
+  display: none;
+}
+
