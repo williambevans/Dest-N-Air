@@ -36,8 +36,11 @@ body {
 
 .card {
     width: 100px;
-    height: 118px;
     overflow: scroll;
     margin-top: 27px;
 }
-
+.air-info {
+    background-color: rgba(247, 247, 247, 0.418);
+    width: 100px;
+    border-radius: 5px;
+}
