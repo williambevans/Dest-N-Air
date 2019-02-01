@@ -12,25 +12,3 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.btn {
-    margin-right: 15px;
-}
-
-.resize {
-    margin-right: 15px;
-}
-
-.navbar-brand {
-    font-family: cursive;
-    font-size: 25px;
-}
-
-.card-top {
-    background-color: white;
-    width: 100px;
-    height: 180px;
-    overflow: scroll;
-    margin-top: 27px;
-    border-radius: 10px;
-}
