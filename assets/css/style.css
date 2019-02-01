@@ -71,3 +71,12 @@
   display: none;
 }
 
+.air-info {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    border-radius: 10px;
+
+}
+
