@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="stylesheet" href="assets/css/indexStyle.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+
   <title>DEST-N-AIR | WEATHER</title>
 </head>
 
@@ -191,8 +196,8 @@
     <!-- air stuff goes here -->
     <div class="flight-inf">
       <div class="cardWeather" style="width: 10rem;">
-        <div class="card-header">
-          Dallas
+        <div class="card-header" id="cityWeather">
+
         </div>
         <ul class="list-group list-group-flush">
           <img id="tempImg" src="assets/images/Screen Shot 2019-01-31 at 8.09.39 PM.png" height="100px" width="100px">
@@ -220,56 +225,51 @@
 
   <div class="cardFlights" style="width: 30rem;">
     <div class="card-header">DAL - ATL</div>
-
-   
-
     <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Airline</th>
-                <th>Flight Time</th>
-                <th>Duration</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>American</td>
-                <td>8:55 AM - 12:40 PM</td>
-                <td>2h 49m</td>
-                <td>$397</td>
-            </tr>
-            <tr>
-                <td>American</td>
-                <td>8:55 AM - 12:40 PM</td>
-                <td>2h 49m</td>
-                <td>$397</td>
-            </tr>
-            <tr>
-                <td>American</td>
-                <td>8:55 AM - 12:40 PM</td>
-                <td>2h 49m</td>
-                <td>$397</td>
-                
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Flight Time</th>
+          <th>Duration</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>American</td>
+          <td>8:55 AM - 12:40 PM</td>
+          <td>2h 49m</td>
+          <td>$397</td>
+        </tr>
+        <tr>
+          <td>American</td>
+          <td>8:55 AM - 12:40 PM</td>
+          <td>2h 49m</td>
+          <td>$397</td>
+        </tr>
+        <tr>
+          <td>American</td>
+          <td>8:55 AM - 12:40 PM</td>
+          <td>2h 49m</td>
+          <td>$397</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
+
   
-</div>
+  <div id="firebaseui-auth-container"></div>
+ 
 
 
-
-
-
+  <script src="assets/js/signin.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/flights.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
 
 </body>
-
 </html>

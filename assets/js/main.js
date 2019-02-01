@@ -59,7 +59,7 @@ $(document).ready(function () {
                     renderAirQuality(city, state, usaqi, mainus);
 
 
-                    console.log("City: " + city);
+                    $("#cityWeather").text(city);
                     console.log("State: " + state);
                     console.log("Country: " + country);
                     console.log("Longitude: " + coordinatesLong);
