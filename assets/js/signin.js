@@ -29,11 +29,7 @@ var uiConfig = {
             // occurs. Check below for more details on this.
             return handleUIError(error);
         },
-        uiShown: function () {
-            // The widget is rendered.
-            // Hide the loader.
-            document.getElementById('loader').style.display = 'none';
-        }
+       
     },
     credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
     // Query parameter name for mode.
