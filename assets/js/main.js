@@ -25,7 +25,7 @@ $(document).ready(function () {
             var coordinatesLat = results.location.coordinates[1];
             var humidity = results.current.weather.hu;
             var pressure = results.current.weather.pr;
-            var temperature = (results.current.weather.tp * 9/5) + 32;
+            var temperature = (results.current.weather.tp * 9 / 5) + 32;
             var windDirection = results.current.weather.wd;
             var windSpeed = results.current.weather.ws;
 
@@ -78,6 +78,7 @@ $(document).ready(function () {
             ]
         }
     }
+
     console.log(requestObject);
     $.ajax({
         url: queryURL,
@@ -91,5 +92,9 @@ $(document).ready(function () {
     }).then(function (response) {
 
         console.log(response);
+    });
+
+    $("#tripPlanner").click(function () {
+        $("#flights").show("slow");
     });
 });
