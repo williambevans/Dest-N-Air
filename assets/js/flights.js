@@ -11,17 +11,17 @@ $(document).ready(function () {
             "Seniors": "0",
             "TypeOfTrip": "ROUNDTRIP",
             "SegmentDetails": [{
-                "DepartureDate": "2019-07-29",
-                "DepartureTime": "1100",
-                "Destination": "NYC",
-                "Origin": "LON"
-            },
-            {
-                "DepartureDate": "2019-08-08",
-                "DepartureTime": "1100",
-                "Destination": "LON",
-                "Origin": "NYC"
-            }
+                    "DepartureDate": "2019-07-29",
+                    "DepartureTime": "1100",
+                    "Destination": "NYC",
+                    "Origin": "LON"
+                },
+                {
+                    "DepartureDate": "2019-08-08",
+                    "DepartureTime": "1100",
+                    "Destination": "LON",
+                    "Origin": "NYC"
+                }
             ]
         }
     }
@@ -37,6 +37,13 @@ $(document).ready(function () {
         data: JSON.stringify(requestObject)
     }).then(function (response) {
 
-        console.log(response);
+        var flightData = response.FlightResponse.FpSearch_AirLowFaresRS.SegmentReference.RefDetails[1].PTC_FareBreakdown.Adult.BaseFare;
+        return flightData
+        
+
+    }).then(function (result) {
+
+        console.log(result);
+
     });
 });
