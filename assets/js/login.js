@@ -37,3 +37,43 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 })()
+
+var queryURL = "http://api.airvisual.com/v2/nearest_city?key=BtNrfeJaZn6KRohbs";
+
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function (response) {
+  var results = response.data;
+  var city = results.city;
+  var state = results.state;
+  var country = results.country;
+  var humidity = results.current.weather.hu;
+  var pressure = results.current.weather.pr;
+  var temperature = (results.current.weather.tp * 9 / 5) + 32;
+  var windDirection = results.current.weather.wd;
+  var windSpeed = results.current.weather.ws;
+  var usaqi = results.current.pollution.aqius;
+  var mainus = results.current.pollution.mainus;
+  console.log(results);
+  console.log(city);
+  console.log(state);
+  console.log(country);
+  console.log(humidity);
+  console.log(pressure);
+  console.log(temperature);
+  console.log(windDirection);
+  console.log(windSpeed);
+  console.log(usaqi);
+  console.log(mainus);
+  $("#cityWeather").text(city);
+  $("#humidity").text("Humidity: " + humidity);
+  $("#temp").text("Temperature: " + temperature);
+  $("#windDir").text("Wind Direction: " + windDirection);
+  $("#windSpeed").text("Wind Speed: " + windSpeed);
+  $('.air-card-header').text(city + " " + state);
+  $('.air-card-usaqi').text("US AQI");
+  $('.air-card-text').text(+usaqi);
+  $('.air-card-mainus').text(mainus);
+});
