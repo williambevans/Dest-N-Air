@@ -1,23 +1,22 @@
 var mainApp = {};
-(function(){
+(function () {
     var firebase = app_firebase;
     var uid = null;
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-          // User is signed in.
+            // User is signed in.
             uid = user.uid;
-        } else
-        {
+        } else {
             uid = null;
             window.location.replace("main.html");
         }
-      });
+    });
 
-      //logout function
-      function logOut(){
-          firebase.auth().signOut();
+    //logout function
+    function logOut() {
+        firebase.auth().signOut();
 
-      }
-      mainApp.logOut = logOut;
+    }
+    mainApp.logOut = logOut;
 
 })()
