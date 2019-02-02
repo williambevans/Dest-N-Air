@@ -106,12 +106,10 @@ $(document).ready(function () {
      $(function(){
         $('.card').hover(function(){
             $(this).addClass('dragDiv');
-            console.log(this);
             $('.dragDiv').mousedown(handle_mousedown);
         },
         function() {
             $(this).removeClass('dragDiv');
-            console.log(this);
         }
         
         );
@@ -138,4 +136,6 @@ $(document).ready(function () {
         .on('mouseup', handle_mouseup)
         .on('mousemove', handle_dragging);
     }
+
+
 });
