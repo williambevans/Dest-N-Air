@@ -5,6 +5,9 @@
     margin: 10% 10% 0;
 
 }
+.login-widget {
+    clear: both;
+}
 
 /* .flight */
 .flight-search {
@@ -168,5 +171,3 @@ img {
 .dragDiv{
     
 }
-
-
