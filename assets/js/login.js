@@ -37,8 +37,9 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 })()
+var apiKey = "5aektkmcrC8YFtJr8";
 
-var queryURL = "http://api.airvisual.com/v2/nearest_city?key=BtNrfeJaZn6KRohbs";
+var queryURL = "http://api.airvisual.com/v2/nearest_city?key="+apiKey;
 
 
 $.ajax({
