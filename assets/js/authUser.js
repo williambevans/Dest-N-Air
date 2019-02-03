@@ -8,7 +8,7 @@ var mainApp = {};
             uid = user.uid;
         } else {
             uid = null;
-            window.location.replace("main.html");
+            window.location.replace("index.html");
         }
     });
 
