@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var apiKey = "5aektkmcrC8YFtJr8";
 
     $('#weatherSearch').on("click", function (event) {
         event.preventDefault();
@@ -7,7 +8,7 @@ $(document).ready(function () {
         var countryElement = $('#countryAir').val();
 
 
-        var queryURL = "http://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
+        var queryURL = "http://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key="+apiKey;
 
 
         $.ajax({
@@ -65,6 +66,7 @@ $(document).ready(function () {
                     $("#windDir").text("Wind Direction: " + windDirection);
                     $("#windSpeed").text("Wind Speed: " + windSpeed);
 
+                    //cards that display information based on usaqi
                     var displayImage;
             switch (true) {
                 case (usaqi <= 20):
@@ -75,14 +77,18 @@ $(document).ready(function () {
                     break;
                 case (usaqi >= 101 && usaqi <= 400):
                     displayImage = "assets/images/badAir.png";
-            
             }
-
             var imgDiv = $("<div>");
+            $(imgDiv).addClass("imgDiv");
             var cityContent = $("<div>");
             $(cityContent).html(city);
+            $(cityContent).css({"background-color": "#1f161680",
+        "color": "#ffff", "font-size": "18px", "padding": "10px", "width": "390px"});
             $(imgDiv).html("CLICK TO MOVE");
+            $(imgDiv).append("<i class='far fa-window-close'></i>");
+            $(".fa-window-close").css({"right": "0"});
             $(imgDiv).addClass("dragDiv");
+            $(imgDiv).css({"margin": "10%"});
             var image = $("<img>");
             image.attr({
                 'src': displayImage,
@@ -103,12 +109,12 @@ $(document).ready(function () {
             });
         }
         //error handling for country, state, and city
-        function cityError(errormessage) {
+        function cityError(errormessage, apiKey) {
             if (errormessage.responseJSON.data.message == "city_not_found") {
                 var stateElement = $('#stateAir').val();
                 var countryElement = $('#countryAir').val();
 
-                queryURL = "http://api.airvisual.com/v2/cities?state=" + stateElement + "&country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
+                queryURL = "http://api.airvisual.com/v2/cities?state=" + stateElement + "&country=" + countryElement + "&key="+apiKey;
                 ajaxRequest(queryURL);
             } else if (errormessage.responseJSON.data.message == "arguments_missing") {
                 var countryElement = $('#countryAir').val();
@@ -127,6 +133,12 @@ $(document).ready(function () {
         }
 
     });
+    //close info image element
+    function closeInfoCard(){
+        $(this).closest(".imgDiv").remove();
+    }
+    //listener for dynamic created elements
+    $(document).on('click', '.fa-window-close', closeInfoCard);
 
     //adds drag class and removes drag class
     $(function () {
