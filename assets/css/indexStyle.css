@@ -19,3 +19,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+body {
+    background-color: rgba(130, 162, 231, 0.418);
+}
