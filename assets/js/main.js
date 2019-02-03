@@ -6,9 +6,13 @@ $(document).ready(function () {
         var cityElement = $('#cityAir').val();
         var stateElement = $('#stateAir').val();
         var countryElement = $('#countryAir').val();
+        if(countryElement == "united states" || countryElement == "us" || countryElement == "usa") {
+            var countryElement = "usa";
+        } else{
+           countryElement =countryElement;
+        }
 
-
-        var queryURL = "http://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key="+apiKey;
+        var queryURL = "https://api.airvisual.com/v2/city?city=" + cityElement + "&state=" + stateElement + "&country=" + countryElement + "&key="+apiKey;
 
 
         $.ajax({
@@ -30,7 +34,7 @@ $(document).ready(function () {
 
 
         });
-        ajaxRequest(queryURL, cityError);
+        ajaxRequest(queryURL);
 
         // ajax request takes differnt urls
         function ajaxRequest(url, cityError) {
@@ -102,28 +106,22 @@ $(document).ready(function () {
             console.log(imgDiv);
 
                 },
+                  //error handling for country, state, and city
                 error: function (errormessage) {
-
-                    cityError(errormessage);
+                    if (errormessage.responseJSON.data.message == "city_not_found") {
+                        var stateElement = $('#stateAir').val();
+                        var countryElement = $('#countryAir').val();
+        
+                        queryURL = "https://api.airvisual.com/v2/cities?state=" + stateElement + "&country=" + countryElement + "&key="+apiKey;
+                        ajaxRequest(queryURL);
+                    } else if (errormessage.responseJSON.data.message == "arguments_missing") {
+                        var countryElement = $('#countryAir').val();
+                        queryURL = "https://api.airvisual.com/v2/states?country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
+                        ajaxRequest(queryURL);
+                    }
                 }
             });
         }
-        //error handling for country, state, and city
-        function cityError(errormessage, apiKey) {
-            if (errormessage.responseJSON.data.message == "city_not_found") {
-                var stateElement = $('#stateAir').val();
-                var countryElement = $('#countryAir').val();
-
-                queryURL = "http://api.airvisual.com/v2/cities?state=" + stateElement + "&country=" + countryElement + "&key="+apiKey;
-                ajaxRequest(queryURL);
-            } else if (errormessage.responseJSON.data.message == "arguments_missing") {
-                var countryElement = $('#countryAir').val();
-                queryURL = "http://api.airvisual.com/v2/states?country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
-                ajaxRequest(queryURL);
-            }
-        }
-
-
         function renderAirQuality(city, state, usaqi, mainus) {
             $('.air-card-header').html(city + " " + state);
             $('.air-card-usaqi').html("US AQI");
