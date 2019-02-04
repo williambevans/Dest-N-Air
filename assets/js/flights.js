@@ -57,31 +57,29 @@ $(document).ready(function () {
             var Airline = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].MarketingAirline.Code;
             var Time = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].DepartureDateTime;
             var Duration = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].FlightDuration;
-           console.log(Time);
-           console.log(Duration);
-            return Airline
+            console.log(Time);
+            console.log(Duration);
+            console.log(Airline);
+        
+
+            var newFlightRow = $("<tr>").append(
+                $("<td>").text(Airline),
+                $("<td>").text(Time),
+                $("<td>").text(Duration)
+        
+            
+            );
+
+            $("#flight-table > tbody").append(newFlightRow);
+
 
 
 
         }).then(function (result) {
 
-            console.log(result);
-            var flightRow = $("<tr>");
-            flightRow.addClass("flightRow");
-            $(".flightBody").prepend(flightRow);
-            var flightAirline = $("<td>");
-            var flightTime = $("<td>");
-            var flightDuration = $("<td>");
-            var flightCost = $("<td>");
-            flightAirline.addClass("flightAirline");
-            flightTime.addClass("flightTime");
-            flightDuration.addClass("flightDuration");
-            flightCost.addClass("flightCost");
-            $(".flightRow").append(flightAirline);
-            $(".flightRow").append(flightTime);
-            $(".flightRow").append(flightDuration);
-            $(".flightRow").append(flightCost);
-            $(".flightAirline").text(result);
+            
+
+
 
         });
 

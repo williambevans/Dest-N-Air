@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -88,11 +89,11 @@
           </div>
           <button type="submit" class="btn btn-primary" id="flightSearch">Search</button>
         </form>
-    
-       
 
-      <!-- logout button -->
-      <button onclick=" mainApp.logOut()">LogOut</button>
+
+
+        <!-- logout button -->
+        <button onclick=" mainApp.logOut()">LogOut</button>
 
     </nav>
 
@@ -100,7 +101,7 @@
 
 
     <div class="weather-grid-container">
-      
+
       <!-- air stuff goes here -->
       <div class="card flight-inf">
         <div class="dragTitle">CLICK TO MOVE</div>
@@ -133,20 +134,21 @@
       <div class="card cardFlights" style="width: 30rem;">
         <div class="dragTitle">CLICK TO MOVE</div>
         <div class="card-header">DAL - ATL</div>
-        <table class="table table-bordered">
+        <table class="table table-sm" align="center" id='flight-table'>
           <thead>
             <tr>
-              <th>Airline</th>
-              <th>Flight</th>
-              <th>Duration</th>
-              <th>Price</th>
+              <th scope="col">Airline</th>
+              <th scope="col">Time</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Price</th>
             </tr>
           </thead>
-          <tbody class="flightBody">
-
+          <tbody>
           </tbody>
         </table>
       </div>
+
+
     </div>
   </div>
 
