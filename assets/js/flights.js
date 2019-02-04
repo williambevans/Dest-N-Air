@@ -39,7 +39,7 @@ $(document).ready(function () {
                 }]
             }
         }
-        console.log(requestObject); 
+        console.log(requestObject);
         $.ajax({
             url: queryURL,
             method: "POST",
@@ -54,16 +54,38 @@ $(document).ready(function () {
             console.log(response);
 
 
-            var flightData = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption;
-            return flightData
+            var Airline = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].MarketingAirline.Code;
+            var Time = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].DepartureDateTime;
+            var Duration = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].FlightDuration;
+           console.log(Time);
+           console.log(Duration);
+            return Airline
+
 
 
         }).then(function (result) {
 
             console.log(result);
+            var flightRow = $("<tr>");
+            flightRow.addClass("flightRow");
+            $(".flightBody").prepend(flightRow);
+            var flightAirline = $("<td>");
+            var flightTime = $("<td>");
+            var flightDuration = $("<td>");
+            var flightCost = $("<td>");
+            flightAirline.addClass("flightAirline");
+            flightTime.addClass("flightTime");
+            flightDuration.addClass("flightDuration");
+            flightCost.addClass("flightCost");
+            $(".flightRow").append(flightAirline);
+            $(".flightRow").append(flightTime);
+            $(".flightRow").append(flightDuration);
+            $(".flightRow").append(flightCost);
+            $(".flightAirline").text(result);
 
         });
+
+
+
     });
-
-
 });
