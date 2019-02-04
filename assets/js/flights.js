@@ -1,15 +1,22 @@
 $(document).ready(function () {
     $('#flightSearch').on("click", function (event) {
         event.preventDefault();
-        var from = $('#flightFrom').val();
-        var to = $('#flightTo').val();
-        var when = $('#flightWhen').val();
-        var type = $('#flightClass').val();
+        var adults = $('#flightAdults').val();
+        var economy = $('#flightClass').val();
+        var type = $('#flightType').val();
+        var date = $('#flightDate').val();
+        var time = $('#flightTime').val();
+        var origin = $('#flightOrigin').val();
+        var destination = $('#flightDestination').val();
 
-        console.log(from);
-        console.log(to);
-        console.log(when);
+
+        console.log(adults);
+        console.log(economy);
         console.log(type);
+        console.log(date);
+        console.log(time);
+        console.log(origin);
+        console.log(destination);
 
 
 
@@ -17,22 +24,22 @@ $(document).ready(function () {
         var requestObject = {
             "ResponseVersion": "VERSION43",
             "FlightSearchRequest": {
-                "Adults": "1",
+                "Adults": adults,
                 "Child": "0",
-                "ClassOfService": "ECONOMY",
+                "ClassOfService": economy,
                 "InfantInLap": "0",
                 "InfantOnSeat": "0",
                 "Seniors": "0",
-                "TypeOfTrip": "ONEWAYTRIP",
+                "TypeOfTrip": type,
                 "SegmentDetails": [{
-                    "DepartureDate": "08-28-2019",
-                    "DepartureTime": "1100",
-                    "Origin": "ATH",
-                    "Destination": "LHE"
+                    "DepartureDate": date,
+                    "DepartureTime": time,
+                    "Origin": origin,
+                    "Destination": destination
                 }]
             }
         }
-        console.log(requestObject);
+        console.log(requestObject); 
         $.ajax({
             url: queryURL,
             method: "POST",
@@ -47,7 +54,7 @@ $(document).ready(function () {
             console.log(response);
 
 
-            var flightData = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment;
+            var flightData = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption;
             return flightData
 
 

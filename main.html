@@ -59,24 +59,37 @@
         </button>
         <form class="dropdown-menu p-4">
           <div class="form-group">
-            <label for="exampleDropdownFormEmail2">From</label>
-            <input type="text" class="form-control" id="flightFrom" placeholder="Dallas, TX">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">To</label>
-            <input type="text" class="form-control" id="flightTo" placeholder="Miami, FL">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">When</label>
-            <input type="text" class="form-control" id="flightWhen" placeholder="10/13-10/17">
+            <label for="exampleDropdownFormEmail2">Adults</label>
+            <input type="text" class="form-control" id="flightAdults" placeholder="1">
           </div>
           <div class="form-group">
             <label for="exampleDropdownFormPassword2">Class</label>
             <input type="text" class="form-control" id="flightClass" placeholder="Economy">
           </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail2">Type of Trip</label>
+            <input type="text" class="form-control" id="flightType" placeholder="ONEWAYTRIP">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Departure Date</label>
+            <input type="text" class="form-control" id="flightDate" placeholder="08-28-2019">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Departure Time</label>
+            <input type="text" class="form-control" id="flightTime" placeholder="1100">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Flight Origin</label>
+            <input type="text" class="form-control" id="flightOrigin" placeholder="ATH">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Destination</label>
+            <input type="text" class="form-control" id="flightDestination" placeholder="LHE">
+          </div>
           <button type="submit" class="btn btn-primary" id="flightSearch">Search</button>
         </form>
-      </div>
+    
+       
 
       <!-- logout button -->
       <button onclick=" mainApp.logOut()">LogOut</button>
