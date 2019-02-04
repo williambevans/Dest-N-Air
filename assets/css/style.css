@@ -82,7 +82,7 @@
     border-radius: 10px;
     width: 8rem;
     margin-top: 25%;
-    margin-left: 50%;
+    margin-left: 54.4%;
   
 }
 
@@ -108,7 +108,7 @@
     width: 164px;
     height: 630px;
     float: left;
-    margin-left: 37%;
+    margin-left: 39%;
     margin-top: 3.5%;
 }
 
@@ -186,7 +186,15 @@ body {
 .font2{
     color: ghostwhite;
     font-family: cursive;
-    font-size: 40px;
+    font-size: 45px;
+  
+}
+
+.font3{
+    color: ghostwhite;
+    font-family: initial;
+    font-size: 20px;
+    letter-spacing: 3px;
   
 }
 
@@ -199,6 +207,6 @@ body {
 .firebaseui-idp-list {
 margin-top: 15%;
 position: absolute;
-margin-left: 43%;
+margin-left: 60%;
 width: 131px;
 }
