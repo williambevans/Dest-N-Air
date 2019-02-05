@@ -54,36 +54,56 @@ $(document).ready(function () {
             console.log(response);
 
 
+            var priceArray = response.FlightResponse.FpSearch_AirLowFaresRS.SegmentReference.RefDetails;
+            var flightArray = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption;
             var Airline = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].MarketingAirline.Code;
             var Time = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].DepartureDateTime;
             var Duration = response.FlightResponse.FpSearch_AirLowFaresRS.OriginDestinationOptions.OutBoundOptions.OutBoundOption[0].FlightSegment[0].FlightDuration;
+            var Price = response.FlightResponse.FpSearch_AirLowFaresRS.SegmentReference.RefDetails[0].PTC_FareBreakdown.Adult.TotalAdultFare;
+            console.log(flightArray);
             console.log(Time);
             console.log(Duration);
             console.log(Airline);
-        
+            console.log(Price);
+
+
+            for (var i = 0; i < flightArray.length; i++) {
+
+                var airlineCode = flightArray[i].FlightSegment[0].MarketingAirline.Code;
+
+                var newFlightRow = $("<tr>");
+
+                var newAirline = $("<td>");
+
+                newFlightRow.append(newAirline);
+
+                newAirline.append(airlineCode);
+
+                $("#flight-table > tbody").append(newFlightRow);
+
+                console.log(flightArray[i].FlightSegment[0].MarketingAirline.Code);
+
+                
+
+                console.log(airlineCode);
+                
+            }
 
             var newFlightRow = $("<tr>").append(
                 $("<td>").text(Airline),
                 $("<td>").text(Time),
-                $("<td>").text(Duration)
-        
-            
+                $("<td>").text(Duration),
+                $("<td>").text(Price)
+
+
             );
+
+
 
             $("#flight-table > tbody").append(newFlightRow);
 
-
-
-
         }).then(function (result) {
 
-            
-
-
-
         });
-
-
-
     });
 });
