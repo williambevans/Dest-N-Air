@@ -70,24 +70,46 @@ $(document).ready(function () {
             for (var i = 0; i < flightArray.length; i++) {
 
                 var airlineCode = flightArray[i].FlightSegment[0].MarketingAirline.Code;
+                var timeDate = flightArray[i].FlightSegment[0].ArrivalDateTime;
+                var hours = flightArray[i].FlightSegment[0].FlightDuration;
 
                 var newFlightRow = $("<tr>");
 
                 var newAirline = $("<td>");
+                var newDateTime = $("<td>");
+                var newDuration = $("<td>");
 
                 newFlightRow.append(newAirline);
+                newFlightRow.append(newDateTime);
+                newFlightRow.append(newDuration);
 
                 newAirline.append(airlineCode);
+                newDateTime.append(timeDate);
+                newDuration.append(hours);
+                
 
                 $("#flight-table > tbody").append(newFlightRow);
 
                 console.log(flightArray[i].FlightSegment[0].MarketingAirline.Code);
 
+            
                 console.log(airlineCode);
+                console.log(timeDate);
                 
             }
 
-          
+            var newFlightRow = $("<tr>").append(
+                $("<td>").text(Airline),
+                $("<td>").text(Time),
+                $("<td>").text(Duration),
+                $("<td>").text(Price)
+
+
+            );
+
+
+
+            $("#flight-table > tbody").append(newFlightRow);
 
         }).then(function (result) {
 
