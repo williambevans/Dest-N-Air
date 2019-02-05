@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var apiKey = "BtNrfeJaZn6KRohbs";
+    var apiKey = "5aektkmcrC8YFtJr8";
 
     $('#weatherSearch').on("click", function (event) {
         event.preventDefault();
@@ -116,12 +116,12 @@ $(document).ready(function () {
                         var stateElement = $('#stateAir').val();
                         var countryElement = $('#countryAir').val();
 
-                        queryURL = "https://api.airvisual.com/v2/cities?state=" + stateElement + "&country=" + countryElement + "&key=" + apiKey;
+                        queryURL = "https://api.airvisual.com/v2/cities?state="+stateElement+"&country="+countryElement+"&key="+apiKey;
                         ajaxRequest(queryURL);
                      
                     } else if (errormessage.responseJSON.data.message == "arguments_missing") {
                         var countryElement = $('#countryAir').val();
-                        queryURL = "https://api.airvisual.com/v2/states?country=" + countryElement + "&key=BtNrfeJaZn6KRohbs";
+                        queryURL = "https://api.airvisual.com/v2/states?country=" + countryElement + "&key="+apiKey;
                         ajaxRequest(queryURL);
                     }
                 }
@@ -272,6 +272,7 @@ function geocode(platform) {
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
   
   // Create the default UI components
+
   var ui = H.ui.UI.createDefault(map, defaultLayers);
   
   // Hold a reference to any infobubble opened
@@ -295,6 +296,16 @@ function geocode(platform) {
       bubble.open();
     }
   }
+  
+  function createInfoBubble(map, position) {
+    // Create info bubble
+
+    var bubble = new H.ui.InfoBubble({position}, {
+        content: '<b>Hello World!</b>'
+    });
+    // Add info bubble to the UI:
+    ui.addBubble(bubble);
+}
   
   /**
    * Creates a series of list items for each location found, and adds it to the panel.

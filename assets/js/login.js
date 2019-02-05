@@ -55,7 +55,7 @@ var name, email, photoUrl, uid, emailVerified;
     // The start method will wait until the DOM is loaded.
 ui.start("#firebaseui-auth-container", uiConfig);
 })()
-var apiKey = "BtNrfeJaZn6KRohbs";
+var apiKey = "5aektkmcrC8YFtJr8";
 
 var queryURL = "https://api.airvisual.com/v2/nearest_city?key="+apiKey;
 
