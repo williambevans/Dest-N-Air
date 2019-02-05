@@ -83,24 +83,11 @@ $(document).ready(function () {
 
                 console.log(flightArray[i].FlightSegment[0].MarketingAirline.Code);
 
-                
-
                 console.log(airlineCode);
                 
             }
 
-            var newFlightRow = $("<tr>").append(
-                $("<td>").text(Airline),
-                $("<td>").text(Time),
-                $("<td>").text(Duration),
-                $("<td>").text(Price)
-
-
-            );
-
-
-
-            $("#flight-table > tbody").append(newFlightRow);
+          
 
         }).then(function (result) {
 
