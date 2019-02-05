@@ -31,10 +31,31 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
       
     };
 
+    //current users login info
+    firebase.auth().onAuthStateChanged(function(user) {
+
+      
+      if (user) {
+        console.log(user.uid);
+        console.log(user.displayName);
+        console.log(user.email);
+   
+      } else {
+        console.log("no user");
+      }
+    });
+    //get user profile info
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+    
+        //get user profile info
+var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid, emailVerified;
+
     // The start method will wait until the DOM is loaded.
 ui.start("#firebaseui-auth-container", uiConfig);
 })()
-var apiKey = "5aektkmcrC8YFtJr8";
+var apiKey = "BtNrfeJaZn6KRohbs";
 
 var queryURL = "https://api.airvisual.com/v2/nearest_city?key="+apiKey;
 
@@ -54,17 +75,6 @@ $.ajax({
   var windSpeed = results.current.weather.ws;
   var usaqi = results.current.pollution.aqius;
   var mainus = results.current.pollution.mainus;
-  console.log(results);
-  console.log(city);
-  console.log(state);
-  console.log(country);
-  console.log(humidity);
-  console.log(pressure);
-  console.log(temperature);
-  console.log(windDirection);
-  console.log(windSpeed);
-  console.log(usaqi);
-  console.log(mainus);
   $("#cityWeather").text(city);
   $("#humidity").text("Humidity: " + humidity);
   $("#temp").text("Temperature: " + temperature);
