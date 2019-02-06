@@ -138,7 +138,7 @@ $(document).ready(function () {
     });
     //close info image element
     function closeInfoCard() {
-        $(this).closest(".imgDiv mapLocation").remove();
+        $(this).closest(".imgDiv").remove();
     }
     //listener for dynamic created elements
     $(document).on('click', '.fa-window-close', closeInfoCard);
