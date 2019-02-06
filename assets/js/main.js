@@ -388,10 +388,6 @@ function geocode(platform) {
   // Now use the map as required...
   geocode(platform);
     }
-
-    $('.fa-window-close').on("click", function(){
-        $('.mapLocation').remove();
-    });
     
 
 
