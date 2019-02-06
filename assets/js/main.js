@@ -138,7 +138,7 @@ $(document).ready(function () {
     });
     //close info image element
     function closeInfoCard() {
-        $(this).closest(".imgDiv").remove();
+        $(this).closest(".imgDiv mapLocation").remove();
     }
     //listener for dynamic created elements
     $(document).on('click', '.fa-window-close', closeInfoCard);
@@ -388,6 +388,10 @@ function geocode(platform) {
   // Now use the map as required...
   geocode(platform);
     }
+
+    $('.fa-window-close').on("click", function(){
+        $('.mapLocation').remove();
+    });
     
 
 
